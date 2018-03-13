@@ -15,6 +15,18 @@ config OF_TOUCHSCREEN
 	def_tristate INPUT
 	depends on INPUT && OF
 
+config TOUCHSCREEN_ILITEK_NOVASIS
+	tristate "Novasis Ilitek port I2C Touchscreen"
+	depends on I2C
+	help
+	  Say Y here if you have Novasis board with Ilitek series I2C touchscreen,
+	  such as ILI230X, ILI231X, ILI251X or ILI2120, connected to your system.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called atmel_mxt_ts.
+
 config TOUCHSCREEN_88PM860X
 	tristate "Marvell 88PM860x touchscreen"
 	depends on MFD_88PM860X
